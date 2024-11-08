@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: nginx-deployment-repo
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: git@github.com:ManuRoy/nginx-deployment.git
+  ref:
+    branch: main
+  secretRef:
+    name: git-ssh-secret
